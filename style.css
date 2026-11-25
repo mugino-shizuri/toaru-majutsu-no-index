@@ -370,6 +370,118 @@ a { color: inherit; text-decoration: none; }
 }
 .cut-line { flex: 1; height: 1px; background: linear-gradient(90deg, var(--red-deep), transparent); }
 
+/* ── 入口（两个数据模块） ─────────────────────────────── */
+.access {
+  padding: clamp(52px, 8vh, 96px) var(--pad) 0;
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.access-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding-bottom: 16px;
+  margin-bottom: 26px;
+  border-bottom: 1px solid var(--line);
+}
+
+.access-no {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .2em;
+  color: var(--red);
+  border: 1px solid var(--red-deep);
+  padding: 3px 8px;
+}
+
+.access-head h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(18px, 2.2vw, 24px);
+  letter-spacing: .08em;
+}
+
+.access-meta {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .26em;
+  color: var(--dim);
+}
+
+.access-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+}
+
+.access-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 30px 28px 32px;
+  background: var(--ink);
+  transition: background .35s ease, padding-left .35s ease;
+}
+
+.access-card::after {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--red);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .4s cubic-bezier(.2,.8,.2,1);
+}
+
+.access-card:hover { background: var(--ink-3); padding-left: 34px; }
+.access-card:hover::after { transform: scaleY(1); }
+
+.access-tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .28em;
+  color: var(--dim);
+}
+
+.access-name {
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.8vw, 32px);
+  letter-spacing: .08em;
+  line-height: 1.2;
+}
+
+.access-jp {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .24em;
+  color: var(--amber);
+}
+
+.access-path {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .02em;
+  color: var(--dim);
+  word-break: break-all;
+}
+
+.access-arrow {
+  position: absolute;
+  right: 26px;
+  top: 28px;
+  font-family: var(--mono);
+  font-size: 16px;
+  color: var(--red);
+  transition: transform .35s ease;
+}
+
+.access-card:hover .access-arrow { transform: translateX(6px); }
+
 /* ── 章节通用 ─────────────────────────────────────────── */
 .chapter {
   position: relative;
@@ -776,6 +888,7 @@ a { color: inherit; text-decoration: none; }
   .card-lead .card-desc { margin-top: 16px; }
   .grid-3 { grid-template-columns: 1fr; }
   .spinoff-grid { grid-template-columns: 1fr; }
+  .access-grid { grid-template-columns: 1fr; }
   .timeline li { grid-template-columns: 1fr; gap: 6px; padding-left: 24px; }
   .hero-rail { display: none; }
 }
