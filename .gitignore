@@ -1,0 +1,13 @@
+# 本地凭据（绝不提交）
+.git-token
+.env
+.env.*
+*.pem
+*.key
+
+# 编辑器 / 系统
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+node_modules/
